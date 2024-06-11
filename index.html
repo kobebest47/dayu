@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
-    <title>永續創新科技</title>
+    <title>Document</title>
 </head>
 <style>
 .logo-container {
@@ -49,7 +49,6 @@
     font-weight:100;
     font-style:normal ;
     letter-spacing: 2.5px;
-
 }
 
 .nav-link {
@@ -58,7 +57,7 @@
     margin: 0;
     display: flex;
     gap: 20px;
-    padding : 10px 30px 2px 30px!important
+    padding: 10px 30px 2px 30px !important;
 }
 
 .nav-links li {
@@ -69,7 +68,6 @@
     text-decoration: none;
     color: #333;
     font-size: 16px;
-
 }
 
 .page-info {
@@ -84,8 +82,6 @@
     display: block;
 }
 
-
-
 @media (min-width: 1200px) {
     .page-info {
         max-width: 1760px;
@@ -98,81 +94,70 @@
     }
 }
 
-.navbar a{
-  color: grey;
-  transition: color 0.3s;
-  font-weight: 400;
+.navbar a {
+    color: grey;
+    transition: color 0.3s;
+    font-weight: 400;
 }
-
 
 .navbar a:hover {
-  color: rgba(31 169 31); 
+    color: rgba(31, 169, 31);
 }
-
-
 </style>
 <body>
-    <div class = "logo-container" >
-        <img src="image/logo.png">
+    <div class="logo-container">
+        <img src="image/logo.png" alt="Logo">
     </div>
-    <div class = "top-container-navbar">
-        <nav class="navbar navbar-expand-lg bg-body " s>
-            <div class="container-fluid" >
-              <a class="navbar-brand" href="#" ></a>
-              <button class="navbar-toggler justify-content-end"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse mb-max justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg')">公司介紹</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/fund_info.jpg')">基金特色</a>
-                  </li>
-            <!--  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg')">團隊介紹</a>
-                  </li>--> 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/invest_strategy.jpg')">投資策略</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/invent_field.jpg')">投資領域</a>
-                  </li>
-                </ul>
-              </div>
+    <div class="top-container-navbar">
+        <nav class="navbar navbar-expand-lg bg-body">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mb-max justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg')">公司介紹</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="changeImage('image/fund_info.jpg')">基金特色</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="changeImage('image/invest_strategy.jpg')">投資策略</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="changeImage('image/invent_field.jpg')">投資領域</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            
-          </nav>
+        </nav>
     </div>
-<div class="page-info" >
-    <img id="main-image" src="image/company_info.jpg" alt="Company Info">
-</div>
-<div class="last-container" style="margin-bottom: 30px;">
+    <div class="page-info">
+        <img id="main-image" src="image/company_info.jpg" alt="Company Info">
+    </div>
+    <div class="last-container" style="margin-bottom: 30px;"></div>
+    <script>
+        // Preload images
+        const images = [
+            'image/company_info.jpg',
+            'image/fund_info.jpg',
+            'image/invest_strategy.jpg',
+            'image/invent_field.jpg'
+        ];
 
-
-</div>
-<!--<script>
-  function changeImage(imagePath){
-
-    $('.nav-link').attr('src',imagePath);
-        $('#main-image').fadeOut(
-            'normal',
-            function(){
-                $('#main-image').attr('src', $('.nav-link').attr('src')).fadeIn();
-            }
-        );
-  }
-
-  
-</script>-->
-<script>
-    function changeImage(imagePath) {
-        $('#main-image').fadeOut('normal', function() {
-            $(this).attr('src', imagePath).fadeIn('normal');
+        images.forEach((image) => {
+            const img = new Image();
+            img.src = image;
         });
-    }
-</script>
+
+        function changeImage(imagePath) {
+            const mainImage = $('#main-image');
+            mainImage.fadeOut('normal', function() {
+                mainImage.attr('src', imagePath).fadeIn('normal');
+            });
+        }
+    </script>
 </body>
 </html>
