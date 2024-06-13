@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="永續創新, 永續, 創新科技, 大譽資本, 永續科技"> 
-    <meta name="keywords" content="永續創新科技,永續創新,永續,創新科技,大譽資本,永續科技" />  
+    <meta name="keywords" content="永續創新科技資本管理顧問,永續創新,永續創新科技,永續,創新科技,大譽資本,永續科技" />  
     <meta name="author" content="Digital Idea Multi-media Co., Ltd">
-    <meta name="googlebot" content="index,follow">
+    <meta name="robot" content="index,follow">
+    <link rel="canonical" href="http://noahgt-capital.com">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -93,12 +94,28 @@
     .page-info {
         max-width: 1760px;
     }
+    .last_content{
+        color: rgb(122, 114, 114);
+        font-size: 13px;
+        margin-top: 70px;
+        font-family: "Noto Sans TC", sans-serif;
+        text-align: center;
+        display: block;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
     .page-info {
         max-width: 920px;
     }
+    .last_content{
+        color: rgb(122, 114, 114);
+        font-size: 12px;
+        margin-top: 40px;
+        font-family: "Noto Sans TC", sans-serif;
+        text-align: center;
+        display: block;
+}
 }
 
 .navbar a {
@@ -110,6 +127,9 @@
 .navbar a:hover {
     color: rgba(31, 169, 31);
 }
+
+
+
 </style>
 <body>
     <div class="logo-container">
@@ -125,19 +145,19 @@
                 <div class="collapse navbar-collapse mb-max justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg')">公司介紹</a>
+                            <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg');showFooter()">公司介紹</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="changeImage('image/fund_info.jpg')">基金特色</a>
+                            <a class="nav-link" href="#" onclick="changeImage('image/fund_info.jpg'); hideFooter()">基金特色</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="changeImage('image/team.jpg')">顧問團隊</a>
+                            <a class="nav-link" href="#" onclick="changeImage('image/team.jpg'); hideFooter()">顧問團隊</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="changeImage('image/invest_strategy.jpg')">投資策略</a>
+                            <a class="nav-link" href="#" onclick="changeImage('image/invest_strategy.jpg'); hideFooter()">投資策略</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="changeImage('image/invent_field.jpg')">投資領域</a>
+                            <a class="nav-link" href="#" onclick="changeImage('image/invent_field.jpg'); hideFooter()">投資領域</a>
                         </li>
                     </ul>
                 </div>
@@ -147,6 +167,12 @@
     <div class="page-info">
         <img id="main-image" src="image/company_info.jpg" alt="Company Info">
     </div>
+
+
+    <footer class = "last_content">
+        <p>106台北市大安區敦化南路二段76號12樓之1 &ensp;|&ensp; 電話: 02-2701-1868 &ensp;|&ensp; 傳真: 02-2701-1008 &ensp;|&ensp; 統一編號: 93921972<br>
+        Noah Green Technology Capital Management Co., Ltd.</p>
+	</footer>
     <div class="last-container" style="margin-bottom: 30px;"></div>
     <script>
         // Preload images
@@ -168,6 +194,12 @@
             mainImage.fadeOut('normal', function() {
                 mainImage.attr('src', imagePath).fadeIn('normal');
             });
+        }
+        function hideFooter() {
+            document.querySelector('.last_content').style.display = 'none';
+        }
+        function showFooter() {
+            document.querySelector('.last_content').style.display = 'block';
         }
     </script>
 </body>
