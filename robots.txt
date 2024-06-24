@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /admin/  # 不允許訪問管理目錄
-Disallow: /index.html  # 不允許訪問保密文件
 Allow: /public/  # 允許訪問公共目錄
 
 # 指定網站地圖
